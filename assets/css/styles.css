@@ -1,0 +1,155 @@
+:root {
+  --brand-purple: #635bff;
+  --brand-red: #e02e5c;
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Geist Variable", "Geist", "Segoe UI", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.font-mono-brand {
+  font-family: "Geist Mono Variable", "Geist Mono", ui-monospace, monospace;
+}
+
+.bg-brand-gradient {
+  background-image: linear-gradient(90deg, var(--brand-purple), var(--brand-red));
+}
+
+.text-brand-gradient {
+  background-image: linear-gradient(90deg, var(--brand-purple), var(--brand-red));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.logo-mark {
+  color: #141414;
+}
+
+.dark .logo-mark {
+  color: #ffffff;
+}
+
+.logo-mark svg path {
+  fill: currentColor;
+}
+
+/* Reveal on scroll */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 0.7s var(--ease-out),
+    transform 0.7s var(--ease-out);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+
+/* Hero brand card float */
+@keyframes float-y {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-float {
+  animation: float-y 5s ease-in-out infinite;
+}
+
+@keyframes soft-glow {
+  0%, 100% { opacity: 0.35; transform: scale(1); }
+  50% { opacity: 0.55; transform: scale(1.06); }
+}
+
+.hero-glow {
+  background: radial-gradient(circle, rgba(99, 91, 255, 0.28), transparent 68%);
+  animation: soft-glow 6s ease-in-out infinite;
+}
+
+/* CTA arrow nudge */
+.btn-arrow {
+  transition: transform 0.3s var(--ease-out);
+}
+
+.group:hover .btn-arrow {
+  transform: translateX(3px);
+}
+
+/* Theme icon crossfade */
+.theme-icon {
+  transition: transform 0.35s var(--ease-out), opacity 0.25s ease;
+}
+
+.theme-toggle:hover .theme-icon {
+  transform: rotate(18deg) scale(1.08);
+}
+
+/* Mobile menu */
+.mobile-nav {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition:
+    max-height 0.4s var(--ease-out),
+    opacity 0.3s ease,
+    padding 0.3s ease;
+}
+
+.mobile-nav.is-open {
+  max-height: 320px;
+  opacity: 1;
+}
+
+/* Form focus ring */
+.field-input:focus {
+  outline: none;
+  border-color: var(--brand-purple);
+  box-shadow: 0 0 0 3px rgba(99, 91, 255, 0.18);
+}
+
+.dark .field-input:focus {
+  box-shadow: 0 0 0 3px rgba(99, 91, 255, 0.28);
+}
+
+/* Page enter */
+@keyframes page-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.page-enter {
+  animation: page-in 0.55s var(--ease-out) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .reveal,
+  .animate-float,
+  .hero-glow,
+  .page-enter {
+    animation: none !important;
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
