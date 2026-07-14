@@ -49,7 +49,6 @@
       "contact.body":
         "Tem um projeto em mente ou quer conversar sobre um produto digital sob medida? Envie uma mensagem — retornamos o mais rápido possível.",
       "contact.location": "Brasil",
-      "contact.social": "Redes",
       "contact.name": "Nome completo",
       "contact.namePh": "Seu nome",
       "contact.email": "E-mail",
@@ -112,7 +111,6 @@
       "contact.body":
         "Have a project in mind, or want to discuss a custom digital product? Send a message — we'll get back to you as soon as possible.",
       "contact.location": "Brazil",
-      "contact.social": "Social",
       "contact.name": "Full name",
       "contact.namePh": "Your name",
       "contact.email": "Email",
