@@ -1,24 +1,20 @@
 # Site Ivalice Labs
 
-Site institucional de [ivalice.com.br](https://ivalice.com.br), baseado no design system do Figma.
+Site institucional de [ivalice.com.br](https://ivalice.com.br).
+
+## URLs
+
+| Página | URL |
+|--------|-----|
+| Início | `/` |
+| Portfólio | `/portfolio/` |
+| Contato | `/contato/` |
+| Privacidade | `/privacidade/` |
+| Termos | `/termos/` |
 
 ## Stack
 
 - HTML + Tailwind CSS (CDN)
 - Geist / Geist Mono
-- Tema claro/escuro com `localStorage`
-- Animações de entrada e microinterações
-
-## Páginas
-
-| Página | Arquivo |
-|--------|---------|
-| Início | `index.html` |
-| Portfólio | `portfolio.html` |
-| Contato | `contact.html` |
-| Privacidade | `privacy.html` |
-| Termos | `terms.html` |
-
-## Pré-visualização local
-
-Abra `index.html` no navegador ou sirva a pasta com um servidor estático.
+- Tema claro/escuro e idioma PT/EN
+- `robots.txt`, `sitemap.xml` e `sitemap.txt`

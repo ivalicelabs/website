@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-lang="pt" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Termos de Uso — Ivalice Labs</title>
+  <meta name="description" content="Termos de Uso do site e dos serviços institucionais da Ivalice Labs.">
+  <link rel="icon" href="/assets/img/logo-icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource-variable/geist@5.2.5/index.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource-variable/geist-mono@5.2.5/index.css">
+  <script>
+    (function () {
+      var t = localStorage.getItem('ivalice-theme');
+      if (t === 'dark' || (!t && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark');
+      }
+      var l = localStorage.getItem('ivalice-lang');
+      if (l !== 'en' && l !== 'pt') l = 'pt';
+      document.documentElement.setAttribute('data-lang', l);
+      document.documentElement.lang = l === 'en' ? 'en' : 'pt-BR';
+    })();
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            ink: { DEFAULT: '#141414', soft: '#171819', muted: '#6b7280', faint: '#888c94' },
+            brand: { purple: '#635bff', red: '#e02e5c' },
+            surface: { light: '#f6f5f6', line: '#e5e7eb', dark: '#141414', 'dark-line': '#22252a' },
+          },
+          fontFamily: {
+            sans: ['Geist Variable', 'Geist', 'Segoe UI', 'sans-serif'],
+            mono: ['Geist Mono Variable', 'Geist Mono', 'ui-monospace', 'monospace'],
+          },
+          maxWidth: { site: '1440px' },
+        },
+      },
+    };
+  </script>
+  <link rel="stylesheet" href="/assets/css/styles.css">
+</head>
+<body data-page="terms" class="min-h-screen bg-white text-ink antialiased transition-colors duration-300 dark:bg-ink-soft dark:text-white">
+  <div class="flex min-h-screen flex-col page-enter">
+    <header class="sticky top-0 z-50 border-b border-surface-line bg-white/85 backdrop-blur-xl dark:border-surface-dark-line dark:bg-ink-soft/85">
+      <div class="mx-auto flex max-w-site items-center justify-between gap-4 px-6 py-5 md:px-10 lg:px-20">
+        <a href="/" class="group flex items-center gap-3" data-i18n-aria="a11y.home">
+          <span class="logo-mark block h-9 w-14 shrink-0">
+            <img src="/assets/img/logo-mark.svg" alt="" class="h-full w-full dark:hidden" width="57" height="36">
+            <img src="/assets/img/logo-mark.svg" alt="" class="hidden h-full w-full invert dark:block" width="57" height="36">
+          </span>
+          <span class="text-[15px] font-bold tracking-wide sm:text-lg">IVALICE LABS</span>
+        </a>
+        <nav class="hidden items-center gap-8 text-[15px] lg:flex" data-i18n-aria="a11y.nav">
+          <a href="/" class="font-medium text-ink-muted transition-colors hover:text-ink dark:text-ink-faint dark:hover:text-white" data-i18n="nav.home">Início</a>
+          <a href="/portfolio/" class="font-medium text-ink-muted transition-colors hover:text-ink dark:text-ink-faint dark:hover:text-white" data-i18n="nav.portfolio">Portfólio</a>
+          <a href="/contato/" class="font-medium text-ink-muted transition-colors hover:text-ink dark:text-ink-faint dark:hover:text-white" data-i18n="nav.contact">Contato</a>
+          <a href="/privacidade/" class="font-medium text-ink-muted transition-colors hover:text-ink dark:text-ink-faint dark:hover:text-white" data-i18n="nav.privacy">Privacidade</a>
+          <a href="/termos/" class="font-semibold text-ink dark:text-white" data-i18n="nav.terms">Termos</a>
+        </nav>
+        <div class="flex items-center gap-2">
+          <div class="lang-switch" role="group" data-i18n-aria="a11y.lang">
+            <button type="button" data-lang-set="pt" aria-pressed="true">PT</button>
+            <button type="button" data-lang-set="en" aria-pressed="false">EN</button>
+          </div>
+          <button type="button" data-theme-toggle class="theme-toggle rounded-full bg-surface-light p-2 dark:bg-surface-dark" data-i18n-aria="a11y.theme">
+            <svg data-theme-icon="light" class="theme-icon h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+            <svg data-theme-icon="dark" class="theme-icon hidden h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 14.5A8.5 8.5 0 1 1 9.5 3 7 7 0 0 0 21 14.5z"/></svg>
+          </button>
+          <button type="button" data-mobile-toggle class="rounded-lg p-2 lg:hidden" data-i18n-aria="a11y.menu" aria-expanded="false" aria-controls="mobile-nav">
+            <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+          </button>
+        </div>
+      </div>
+      <div id="mobile-nav" data-mobile-nav class="mobile-nav border-t border-surface-line px-6 dark:border-surface-dark-line lg:hidden">
+        <nav class="flex flex-col gap-1 py-4 text-[15px]">
+          <a href="/" class="rounded-lg px-3 py-2.5 font-medium text-ink-muted dark:text-ink-faint" data-i18n="nav.home">Início</a>
+          <a href="/portfolio/" class="rounded-lg px-3 py-2.5 font-medium text-ink-muted dark:text-ink-faint" data-i18n="nav.portfolio">Portfólio</a>
+          <a href="/contato/" class="rounded-lg px-3 py-2.5 font-medium text-ink-muted dark:text-ink-faint" data-i18n="nav.contact">Contato</a>
+          <a href="/privacidade/" class="rounded-lg px-3 py-2.5 font-medium text-ink-muted dark:text-ink-faint" data-i18n="nav.privacy">Privacidade</a>
+          <a href="/termos/" class="rounded-lg px-3 py-2.5 font-semibold" data-i18n="nav.terms">Termos</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="flex-1">
+      <article class="mx-auto max-w-site px-6 py-16 md:px-10 lg:px-20 lg:py-20">
+        <div data-lang-panel="pt">
+          <header class="reveal">
+            <p class="font-mono text-xs font-semibold uppercase tracking-[0.14em] text-brand-purple">Documento legal</p>
+            <h1 class="mt-3 text-4xl font-bold tracking-tight text-ink dark:text-white sm:text-[40px]">Termos de Uso</h1>
+            <p class="mt-3 font-mono text-[13px] text-ink-muted dark:text-ink-faint">Última atualização: 13 de julho de 2026</p>
+          </header>
+
+          <div class="mt-12 max-w-[800px] space-y-8 text-[15px] leading-relaxed text-ink-muted dark:text-ink-faint">
+            <p class="reveal">
+              Estes Termos de Uso (“Termos”) regulam o acesso e a utilização do site <strong class="text-ink dark:text-white">ivalice.com.br</strong> e dos canais institucionais da <strong class="text-ink dark:text-white">Ivalice Labs</strong> (“nós”). Ao navegar ou utilizar o site, você declara ter lido e concordado com estes Termos e com a nossa
+              <a href="/privacidade/" class="font-medium text-brand-purple hover:underline">Política de Privacidade</a>.
+            </p>
+
+            <section class="reveal border-b border-surface-line pb-8 dark:border-surface-dark-line">
+              <div class="flex items-center gap-4">
+                <span class="font-mono text-sm font-semibold text-brand-purple">01</span>
+                <h2 class="text-xl font-bold text-ink dark:text-white">Objeto e escopo</h2>
+              </div>
+              <p class="mt-4">
+                O site tem finalidade institucional e informativa: apresentar a Ivalice Labs, seu portfólio, canais de contato e documentos legais. Produtos, aplicativos móveis ou serviços contratados separadamente podem ter termos, contratos ou políticas próprias que prevalecem sobre estes Termos naquilo que for específico daquele produto ou contratação.
+              </p>
+            </section>
+
+            <section class="reveal border-b border-surface-line pb-8 dark:border-surface-dark-line">
+              <div class="flex items-center gap-4">
+                <span class="font-mono text-sm font-semibold text-brand-purple">02</span>
+                <h2 class="text-xl font-bold text-ink dark:text-white">Elegibilidade e conduta</h2>
+              </div>
+              <p class="mt-4">Ao utilizar o site, você se compromete a:</p>
+              <ul class="mt-3 list-disc space-y-2 pl-5">
+                <li>fornecer informações verdadeiras quando nos contatar;</li>
+                <li>não utilizar o site para fins ilícitos, abusivos, fraudulentos ou que violem direitos de terceiros;</li>
+                <li>não tentar acessar áreas restritas, interferir na operação do site, realizar scraping agressivo, ataques ou engenharia reversa de ativos protegidos;</li>
+                <li>não introduzir malware ou conteúdos que comprometam a segurança do site ou de outros usuários.</li>
+              </ul>
+            </section>
+
+            <section class="reveal border-b border-surface-line pb-8 dark:border-surface-dark-line">
+              <div class="flex items-center gap-4">
+                <span class="font-mono text-sm font-semibold text-brand-purple">03</span>
+                <h2 class="text-xl font-bold text-ink dark:text-white">Propriedade intelectual</h2>
+              </div>
+              <p class="mt-4">
+                Marcas, logotipos, tipografia, layout, textos, imagens, ícones, código e demais conteúdos do site são de titularidade da Ivalice Labs ou de licenciantes, e estão protegidos pela legislação brasileira de propriedade intelectual e conexas. É permitida a visualização para fins pessoais e informativos. É vedada a reprodução, distribuição, modificação ou exploração comercial sem autorização prévia por escrito, salvo hipóteses legais de uso legítimo.
+              </p>
+            </section>
+
+            <section class="reveal border-b border-surface-line pb-8 dark:border-surface-dark-line">
+              <div class="flex items-center gap-4">
+                <span class="font-mono text-sm font-semibold text-brand-purple">04</span>
+                <h2 class="text-xl font-bold text-ink dark:text-white">Conteúdo e disponibilidade</h2>
+              </div>
+              <p class="mt-4">
+                Empregamos esforços razoáveis para manter o site atualizado e disponível, mas não garantimos funcionamento ininterrupto, livre de erros ou compatível com todos os dispositivos e navegadores. Podemos alterar, suspender ou descontinuar páginas, funcionalidades ou o próprio site a qualquer momento, sem aviso prévio, quando necessário por motivos técnicos, legais ou de negócio.
+              </p>
+              <p class="mt-3">
+                Informações comerciais, descrições de produtos e status de portfólio têm caráter informativo e não constituem oferta vinculante, a menos que expressamente formalizadas em proposta ou contrato.
+              </p>
+            </section>
+
+            <section class="reveal border-b border-surface-line pb-8 dark:border-surface-dark-line">
+              <div class="flex items-center gap-4">
+                <span class="font-mono text-sm font-semibold text-brand-purple">05</span>
+                <h2 class="text-xl font-bold text-ink dark:text-white">Contato e propostas</h2>
+              </div>
+              <p class="mt-4">
+                O envio de mensagem pelo formulário ou para
+                <a href="mailto:contato@ivalice.com.br" class="font-medium text-brand-purple hover:underline">contato@ivalice.com.br</a>
+                não gera vínculo contratual automático. Projetos, prazos, preços e obrigações só passam a vigorar mediante acordo formal entre as partes. Ao nos contatar, você autoriza o retorno pelo canal informado e o tratamento dos dados conforme a Política de Privacidade.
+              </p>
+            </section>
+
+            <section class="reveal border-b border-surface-line pb-8 dark:border-surface-dark-line">
+              <div class="flex items-center gap-4">
+                <span class="font-mono text-sm font-semibold text-brand-purple">06</span>
+                <h2 class="text-xl font-bold text-ink dark:text-white">Links de terceiros</h2>
+              </div>
+              <p class="mt-4">
+                O site pode conter links para sites, redes sociais ou serviços de terceiros. Não controlamos esses ambientes e não nos responsabilizamos por conteúdos, políticas ou práticas de privacidade de terceiros. O acesso a links externos ocorre por sua conta e risco.
+              </p>
+            </section>
+
+            <section class="reveal border-b border-surface-line pb-8 dark:border-surface-dark-line">
+              <div class="flex items-center gap-4">
+                <span class="font-mono text-sm font-semibold text-brand-purple">07</span>
+                <h2 class="text-xl font-bold text-ink dark:text-white">Isenção e limitação de responsabilidade</h2>
+              </div>
+              <p class="mt-4">
+                Na máxima extensão permitida pela lei brasileira aplicável, a Ivalice Labs não se responsabiliza por danos indiretos, lucros cessantes, perda de dados ou prejuízos decorrentes do uso ou da impossibilidade de uso do site, de indisponibilidade temporária, de falhas de conexão, de atos de terceiros ou de caso fortuito e força maior.
+              </p>
+              <p class="mt-3">
+                Nada nestes Termos exclui ou limita responsabilidade que não possa ser excluída ou limitada por lei, inclusive por dolo ou culpa grave, quando assim exigir a legislação consumerista ou civil.
+              </p>
+            </section>
+
+            <section class="reveal border-b border-surface-line pb-8 dark:border-surface-dark-line">
+              <div class="flex items-center gap-4">
+                <span class="font-mono text-sm font-semibold text-brand-purple">08</span>
+                <h2 class="text-xl font-bold text-ink dark:text-white">Privacidade</h2>
+              </div>
+              <p class="mt-4">
+                O tratamento de dados pessoais segue a
+                <a href="/privacidade/" class="font-medium text-brand-purple hover:underline">Política de Privacidade</a>,
+                parte integrante destes Termos para os efeitos dela decorrentes.
+              </p>
+            </section>
+
+            <section class="reveal border-b border-surface-line pb-8 dark:border-surface-dark-line">
+              <div class="flex items-center gap-4">
+                <span class="font-mono text-sm font-semibold text-brand-purple">09</span>
+                <h2 class="text-xl font-bold text-ink dark:text-white">Alterações dos Termos</h2>
+              </div>
+              <p class="mt-4">
+                Podemos revisar estes Termos periodicamente. A versão vigente será sempre a publicada nesta página, com a data de “Última atualização”. Recomendamos a revisão periódica. Continuar a usar o site após alterações significa aceitação da nova versão, na medida autorizada pela lei.
+              </p>
+            </section>
+
+            <section class="reveal border-b border-surface-line pb-8 dark:border-surface-dark-line">
+              <div class="flex items-center gap-4">
+                <span class="font-mono text-sm font-semibold text-brand-purple">10</span>
+                <h2 class="text-xl font-bold text-ink dark:text-white">Legislação e foro</h2>
+              </div>
+              <p class="mt-4">
+                Estes Termos são regidos pelas leis da República Federativa do Brasil. Fica eleito o foro da comarca do domicílio do usuário consumidor, quando este for considerado consumidor nos termos do Código de Defesa do Consumidor; nos demais casos, o foro da comarca do estabelecimento da Ivalice Labs no Brasil, com renúncia a qualquer outro, por mais privilegiado que seja, salvo disposição legal em contrário.
+              </p>
+            </section>
+
+            <section class="reveal border-b border-surface-line pb-8 dark:border-surface-dark-line">
+              <div class="flex items-center gap-4">
+                <span class="font-mono text-sm font-semibold text-brand-purple">11</span>
+                <h2 class="text-xl font-bold text-ink dark:text-white">Contato</h2>
+              </div>
+              <p class="mt-4">
+                Para dúvidas sobre estes Termos:
+                <a href="mailto:contato@ivalice.com.br" class="font-medium text-brand-purple hover:underline">contato@ivalice.com.br</a>.
+              </p>
+            </section>
+          </div>
+        </div>
+
+        <div data-lang-panel="en">
+          <header class="reveal">
+            <p class="font-mono text-xs font-semibold uppercase tracking-[0.14em] text-brand-purple">Legal document</p>
+            <h1 class="mt-3 text-4xl font-bold tracking-tight text-ink dark:text-white sm:text-[40px]">Terms of Use</h1>
+            <p class="mt-3 font-mono text-[13px] text-ink-muted dark:text-ink-faint">Last updated: July 13, 2026</p>
+          </header>
+
+          <div class="mt-12 max-w-[800px] space-y-8 text-[15px] leading-relaxed text-ink-muted dark:text-ink-faint">
+            <p class="reveal">
+              These Terms of Use (“Terms”) govern access to and use of the website <strong class="text-ink dark:text-white">ivalice.com.br</strong> and the institutional channels of <strong class="text-ink dark:text-white">Ivalice Labs</strong> (“we”). By browsing or using the site, you confirm that you have read and agree to these Terms and our
+              <a href="/privacidade/" class="font-medium text-brand-purple hover:underline">Privacy Policy</a>.
+            </p>
+
+            <section class="reveal border-b border-surface-line pb-8 dark:border-surface-dark-line">
+              <div class="flex items-center gap-4">
+                <span class="font-mono text-sm font-semibold text-brand-purple">01</span>
+                <h2 class="text-xl font-bold text-ink dark:text-white">Object and scope</h2>
+              </div>
+              <p class="mt-4">
+                The website has an institutional and informational purpose: to present Ivalice Labs, its portfolio, contact channels, and legal documents. Products, mobile apps, or services contracted separately may have their own terms, contracts, or policies that prevail over these Terms insofar as they are specific to that product or engagement.
+              </p>
+            </section>
+
+            <section class="reveal border-b border-surface-line pb-8 dark:border-surface-dark-line">
+              <div class="flex items-center gap-4">
+                <span class="font-mono text-sm font-semibold text-brand-purple">02</span>
+                <h2 class="text-xl font-bold text-ink dark:text-white">Eligibility and conduct</h2>
+              </div>
+              <p class="mt-4">When using the site, you agree to:</p>
+              <ul class="mt-3 list-disc space-y-2 pl-5">
+                <li>provide truthful information when contacting us;</li>
+                <li>not use the site for unlawful, abusive, fraudulent purposes, or purposes that violate third-party rights;</li>
+                <li>not attempt to access restricted areas, interfere with site operations, perform aggressive scraping, attacks, or reverse engineering of protected assets;</li>
+                <li>not introduce malware or content that compromises the security of the site or other users.</li>
+              </ul>
+            </section>
+
+            <section class="reveal border-b border-surface-line pb-8 dark:border-surface-dark-line">
+              <div class="flex items-center gap-4">
+                <span class="font-mono text-sm font-semibold text-brand-purple">03</span>
+                <h2 class="text-xl font-bold text-ink dark:text-white">Intellectual property</h2>
+              </div>
+              <p class="mt-4">
+                Trademarks, logos, typography, layout, texts, images, icons, code, and other site content are owned by Ivalice Labs or its licensors and are protected by Brazilian intellectual property laws and related rules. Viewing for personal and informational purposes is permitted. Reproduction, distribution, modification, or commercial exploitation without prior written authorization is prohibited, except for lawful fair-use hypotheses.
+              </p>
+            </section>
+
+            <section class="reveal border-b border-surface-line pb-8 dark:border-surface-dark-line">
+              <div class="flex items-center gap-4">
+                <span class="font-mono text-sm font-semibold text-brand-purple">04</span>
+                <h2 class="text-xl font-bold text-ink dark:text-white">Content and availability</h2>
+              </div>
+              <p class="mt-4">
+                We make reasonable efforts to keep the site updated and available, but we do not guarantee uninterrupted, error-free operation or compatibility with all devices and browsers. We may change, suspend, or discontinue pages, features, or the site itself at any time, without prior notice, when necessary for technical, legal, or business reasons.
+              </p>
+              <p class="mt-3">
+                Commercial information, product descriptions, and portfolio status are informational and do not constitute a binding offer unless expressly formalized in a proposal or contract.
+              </p>
+            </section>
+
+            <section class="reveal border-b border-surface-line pb-8 dark:border-surface-dark-line">
+              <div class="flex items-center gap-4">
+                <span class="font-mono text-sm font-semibold text-brand-purple">05</span>
+                <h2 class="text-xl font-bold text-ink dark:text-white">Contact and proposals</h2>
+              </div>
+              <p class="mt-4">
+                Sending a message through the form or to
+                <a href="mailto:contato@ivalice.com.br" class="font-medium text-brand-purple hover:underline">contato@ivalice.com.br</a>
+                does not create an automatic contractual relationship. Projects, deadlines, pricing, and obligations only take effect upon a formal agreement between the parties. By contacting us, you authorize a reply through the channel provided and processing of data in accordance with the Privacy Policy.
+              </p>
+            </section>
+
+            <section class="reveal border-b border-surface-line pb-8 dark:border-surface-dark-line">
+              <div class="flex items-center gap-4">
+                <span class="font-mono text-sm font-semibold text-brand-purple">06</span>
+                <h2 class="text-xl font-bold text-ink dark:text-white">Third-party links</h2>
+              </div>
+              <p class="mt-4">
+                The site may contain links to third-party websites, social networks, or services. We do not control those environments and are not responsible for third-party content, policies, or privacy practices. Access to external links is at your own risk.
+              </p>
+            </section>
+
+            <section class="reveal border-b border-surface-line pb-8 dark:border-surface-dark-line">
+              <div class="flex items-center gap-4">
+                <span class="font-mono text-sm font-semibold text-brand-purple">07</span>
+                <h2 class="text-xl font-bold text-ink dark:text-white">Disclaimer and limitation of liability</h2>
+              </div>
+              <p class="mt-4">
+                To the maximum extent permitted by applicable Brazilian law, Ivalice Labs is not liable for indirect damages, lost profits, data loss, or losses arising from use of or inability to use the site, temporary unavailability, connection failures, acts of third parties, or fortuitous events and force majeure.
+              </p>
+              <p class="mt-3">
+                Nothing in these Terms excludes or limits liability that cannot be excluded or limited by law, including for willful misconduct or gross negligence, when consumer or civil legislation so requires.
+              </p>
+            </section>
+
+            <section class="reveal border-b border-surface-line pb-8 dark:border-surface-dark-line">
+              <div class="flex items-center gap-4">
+                <span class="font-mono text-sm font-semibold text-brand-purple">08</span>
+                <h2 class="text-xl font-bold text-ink dark:text-white">Privacy</h2>
+              </div>
+              <p class="mt-4">
+                Personal data processing follows the
+                <a href="/privacidade/" class="font-medium text-brand-purple hover:underline">Privacy Policy</a>,
+                which forms an integral part of these Terms for the purposes arising therefrom.
+              </p>
+            </section>
+
+            <section class="reveal border-b border-surface-line pb-8 dark:border-surface-dark-line">
+              <div class="flex items-center gap-4">
+                <span class="font-mono text-sm font-semibold text-brand-purple">09</span>
+                <h2 class="text-xl font-bold text-ink dark:text-white">Changes to Terms</h2>
+              </div>
+              <p class="mt-4">
+                We may revise these Terms periodically. The current version will always be the one published on this page, with the “Last updated” date. We recommend reviewing it periodically. Continued use of the site after changes means acceptance of the new version, to the extent authorized by law.
+              </p>
+            </section>
+
+            <section class="reveal border-b border-surface-line pb-8 dark:border-surface-dark-line">
+              <div class="flex items-center gap-4">
+                <span class="font-mono text-sm font-semibold text-brand-purple">10</span>
+                <h2 class="text-xl font-bold text-ink dark:text-white">Governing law and venue</h2>
+              </div>
+              <p class="mt-4">
+                These Terms are governed by the laws of the Federative Republic of Brazil. The courts of the user’s domicile are elected when the user is considered a consumer under the Consumer Defense Code; in other cases, the courts of the venue where Ivalice Labs is established in Brazil, with waiver of any other, however privileged, unless otherwise required by law.
+              </p>
+            </section>
+
+            <section class="reveal border-b border-surface-line pb-8 dark:border-surface-dark-line">
+              <div class="flex items-center gap-4">
+                <span class="font-mono text-sm font-semibold text-brand-purple">11</span>
+                <h2 class="text-xl font-bold text-ink dark:text-white">Contact</h2>
+              </div>
+              <p class="mt-4">
+                For questions about these Terms:
+                <a href="mailto:contato@ivalice.com.br" class="font-medium text-brand-purple hover:underline">contato@ivalice.com.br</a>.
+              </p>
+            </section>
+          </div>
+        </div>
+      </article>
+    </main>
+
+    <footer class="border-t border-surface-line dark:border-surface-dark-line">
+      <div class="mx-auto flex max-w-site flex-col gap-6 px-6 py-10 md:flex-row md:items-center md:justify-between md:px-10 lg:px-20">
+        <div>
+          <div class="flex items-center gap-3">
+            <img src="/assets/img/logo-icon.svg" alt="" class="h-8 w-8" width="32" height="32">
+            <span class="text-lg font-bold tracking-wide">IVALICE LABS</span>
+          </div>
+          <p class="mt-2 text-[13px] text-ink-muted dark:text-ink-faint" data-i18n="footer.rights">© 2026 Ivalice Labs. Todos os direitos reservados.</p>
+        </div>
+        <p class="font-mono text-xs uppercase tracking-wider text-ink-muted dark:text-ink-faint">ivalice.com.br</p>
+      </div>
+    </footer>
+  </div>
+  <script src="/assets/js/i18n.js"></script>
+  <script src="/assets/js/main.js"></script>
+</body>
+</html>

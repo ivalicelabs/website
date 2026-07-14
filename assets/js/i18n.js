@@ -57,7 +57,7 @@
       "contact.message": "Mensagem",
       "contact.messagePh": "Descreva seu projeto ou dúvida...",
       "contact.consent":
-        'Ao enviar, você concorda com o tratamento dos dados conforme nossa <a href="privacy.html" class="font-medium text-brand-purple hover:underline">Política de Privacidade</a>.',
+        'Ao enviar, você concorda com o tratamento dos dados conforme nossa <a href="/privacidade/" class="font-medium text-brand-purple hover:underline">Política de Privacidade</a>.',
       "contact.submit": "Enviar mensagem",
       "contact.mailSubject": "Contato pelo site",
 
@@ -120,7 +120,7 @@
       "contact.message": "Message",
       "contact.messagePh": "Describe your project or question...",
       "contact.consent":
-        'By submitting, you agree to the processing of your data under our <a href="privacy.html" class="font-medium text-brand-purple hover:underline">Privacy Policy</a>.',
+        'By submitting, you agree to the processing of your data under our <a href="/privacidade/" class="font-medium text-brand-purple hover:underline">Privacy Policy</a>.',
       "contact.submit": "Send message",
       "contact.mailSubject": "Website inquiry",
 

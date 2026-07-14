@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ivalice.com.br/sitemap.xml
+Sitemap: https://ivalice.com.br/sitemap.txt
+Sitemap: https://ivalice.com.br/sitemaps.txt
