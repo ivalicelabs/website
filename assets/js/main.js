@@ -77,7 +77,9 @@
         return;
       }
 
-      const subject = encodeURIComponent(`Contato pelo site — ${name}`);
+      const subjectPrefix =
+        window.IvaliceI18n?.t("contact.mailSubject") || "Contato pelo site";
+      const subject = encodeURIComponent(`${subjectPrefix} — ${name}`);
       const body = encodeURIComponent(
         `${message}\n\n— ${name}\n${email}`
       );

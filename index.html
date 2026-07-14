@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR" class="scroll-smooth">
+<html lang="pt-BR" data-lang="pt" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,6 +16,10 @@
       if (t === 'dark' || (!t && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
         document.documentElement.classList.add('dark');
       }
+      var l = localStorage.getItem('ivalice-lang');
+      if (l !== 'en' && l !== 'pt') l = 'pt';
+      document.documentElement.setAttribute('data-lang', l);
+      document.documentElement.lang = l === 'en' ? 'en' : 'pt-BR';
     })();
   </script>
   <script src="https://cdn.tailwindcss.com"></script>
@@ -41,11 +45,11 @@
   </script>
   <link rel="stylesheet" href="assets/css/styles.css">
 </head>
-<body class="min-h-screen bg-white text-ink antialiased transition-colors duration-300 dark:bg-ink-soft dark:text-white">
+<body data-page="home" class="min-h-screen bg-white text-ink antialiased transition-colors duration-300 dark:bg-ink-soft dark:text-white">
   <div class="flex min-h-screen flex-col page-enter">
     <header class="sticky top-0 z-50 border-b border-surface-line bg-white/85 backdrop-blur-xl transition-colors duration-300 dark:border-surface-dark-line dark:bg-ink-soft/85">
       <div class="mx-auto flex max-w-site items-center justify-between gap-4 px-6 py-5 md:px-10 lg:px-20">
-        <a href="index.html" class="group flex items-center gap-3" aria-label="Ivalice Labs — início">
+        <a href="index.html" class="group flex items-center gap-3" data-i18n-aria="a11y.home">
           <span class="logo-mark block h-9 w-14 shrink-0 transition-transform duration-300 group-hover:scale-105">
             <img src="assets/img/logo-mark.svg" alt="" class="h-full w-full dark:hidden" width="57" height="36">
             <img src="assets/img/logo-mark.svg" alt="" class="hidden h-full w-full invert dark:block" width="57" height="36">
@@ -53,16 +57,21 @@
           <span class="text-[15px] font-bold tracking-wide text-ink dark:text-white sm:text-lg">IVALICE LABS</span>
         </a>
 
-        <nav class="hidden items-center gap-8 text-[15px] lg:flex" aria-label="Principal">
-          <a href="index.html" class="font-semibold text-ink dark:text-white">Início</a>
-          <a href="portfolio.html" class="font-medium text-ink-muted transition-colors hover:text-ink dark:text-ink-faint dark:hover:text-white">Portfólio</a>
-          <a href="contact.html" class="font-medium text-ink-muted transition-colors hover:text-ink dark:text-ink-faint dark:hover:text-white">Contato</a>
-          <a href="privacy.html" class="font-medium text-ink-muted transition-colors hover:text-ink dark:text-ink-faint dark:hover:text-white">Privacidade</a>
-          <a href="terms.html" class="font-medium text-ink-muted transition-colors hover:text-ink dark:text-ink-faint dark:hover:text-white">Termos</a>
+        <nav class="hidden items-center gap-8 text-[15px] lg:flex" data-i18n-aria="a11y.nav">
+          <a href="index.html" class="font-semibold text-ink dark:text-white" data-i18n="nav.home">Início</a>
+          <a href="portfolio.html" class="font-medium text-ink-muted transition-colors hover:text-ink dark:text-ink-faint dark:hover:text-white" data-i18n="nav.portfolio">Portfólio</a>
+          <a href="contact.html" class="font-medium text-ink-muted transition-colors hover:text-ink dark:text-ink-faint dark:hover:text-white" data-i18n="nav.contact">Contato</a>
+          <a href="privacy.html" class="font-medium text-ink-muted transition-colors hover:text-ink dark:text-ink-faint dark:hover:text-white" data-i18n="nav.privacy">Privacidade</a>
+          <a href="terms.html" class="font-medium text-ink-muted transition-colors hover:text-ink dark:text-ink-faint dark:hover:text-white" data-i18n="nav.terms">Termos</a>
         </nav>
 
         <div class="flex items-center gap-2">
-          <button type="button" data-theme-toggle class="theme-toggle rounded-full bg-surface-light p-2 transition-colors hover:bg-surface-line dark:bg-surface-dark dark:hover:bg-surface-dark-line" aria-label="Alternar tema claro ou escuro">
+          <div class="lang-switch" role="group" data-i18n-aria="a11y.lang">
+            <button type="button" data-lang-set="pt" aria-pressed="true">PT</button>
+            <button type="button" data-lang-set="en" aria-pressed="false">EN</button>
+          </div>
+
+          <button type="button" data-theme-toggle class="theme-toggle rounded-full bg-surface-light p-2 transition-colors hover:bg-surface-line dark:bg-surface-dark dark:hover:bg-surface-dark-line" data-i18n-aria="a11y.theme">
             <svg data-theme-icon="light" class="theme-icon h-5 w-5 text-ink" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
               <circle cx="12" cy="12" r="4"></circle>
               <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path>
@@ -72,7 +81,7 @@
             </svg>
           </button>
 
-          <button type="button" data-mobile-toggle class="rounded-lg p-2 text-ink transition-colors hover:bg-surface-light lg:hidden dark:text-white dark:hover:bg-surface-dark" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-nav">
+          <button type="button" data-mobile-toggle class="rounded-lg p-2 text-ink transition-colors hover:bg-surface-light lg:hidden dark:text-white dark:hover:bg-surface-dark" data-i18n-aria="a11y.menu" aria-expanded="false" aria-controls="mobile-nav">
             <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
               <path d="M4 7h16M4 12h16M4 17h16"></path>
             </svg>
@@ -81,12 +90,12 @@
       </div>
 
       <div id="mobile-nav" data-mobile-nav class="mobile-nav border-t border-surface-line px-6 dark:border-surface-dark-line lg:hidden">
-        <nav class="flex flex-col gap-1 py-4 text-[15px]" aria-label="Mobile">
-          <a href="index.html" class="rounded-lg px-3 py-2.5 font-semibold text-ink dark:text-white">Início</a>
-          <a href="portfolio.html" class="rounded-lg px-3 py-2.5 font-medium text-ink-muted hover:bg-surface-light dark:text-ink-faint dark:hover:bg-surface-dark">Portfólio</a>
-          <a href="contact.html" class="rounded-lg px-3 py-2.5 font-medium text-ink-muted hover:bg-surface-light dark:text-ink-faint dark:hover:bg-surface-dark">Contato</a>
-          <a href="privacy.html" class="rounded-lg px-3 py-2.5 font-medium text-ink-muted hover:bg-surface-light dark:text-ink-faint dark:hover:bg-surface-dark">Privacidade</a>
-          <a href="terms.html" class="rounded-lg px-3 py-2.5 font-medium text-ink-muted hover:bg-surface-light dark:text-ink-faint dark:hover:bg-surface-dark">Termos</a>
+        <nav class="flex flex-col gap-1 py-4 text-[15px]" data-i18n-aria="a11y.navMobile">
+          <a href="index.html" class="rounded-lg px-3 py-2.5 font-semibold text-ink dark:text-white" data-i18n="nav.home">Início</a>
+          <a href="portfolio.html" class="rounded-lg px-3 py-2.5 font-medium text-ink-muted hover:bg-surface-light dark:text-ink-faint dark:hover:bg-surface-dark" data-i18n="nav.portfolio">Portfólio</a>
+          <a href="contact.html" class="rounded-lg px-3 py-2.5 font-medium text-ink-muted hover:bg-surface-light dark:text-ink-faint dark:hover:bg-surface-dark" data-i18n="nav.contact">Contato</a>
+          <a href="privacy.html" class="rounded-lg px-3 py-2.5 font-medium text-ink-muted hover:bg-surface-light dark:text-ink-faint dark:hover:bg-surface-dark" data-i18n="nav.privacy">Privacidade</a>
+          <a href="terms.html" class="rounded-lg px-3 py-2.5 font-medium text-ink-muted hover:bg-surface-light dark:text-ink-faint dark:hover:bg-surface-dark" data-i18n="nav.terms">Termos</a>
         </nav>
       </div>
     </header>
@@ -104,15 +113,15 @@
             <h1 class="mt-5 text-5xl font-extrabold leading-[1.08] tracking-[-0.03em] text-ink dark:text-white sm:text-6xl lg:text-[64px]">
               Ivalice Labs
             </h1>
-            <p class="mt-6 max-w-xl text-xl font-medium leading-snug text-ink-soft dark:text-[#e0dfdf] sm:text-[22px]">
+            <p class="mt-6 max-w-xl text-xl font-medium leading-snug text-ink-soft dark:text-[#e0dfdf] sm:text-[22px]" data-i18n="home.subtitle">
               Desenvolvemos aplicativos móveis e produtos digitais de alta qualidade.
             </p>
-            <p class="mt-4 max-w-xl text-base leading-relaxed text-ink-muted dark:text-ink-faint">
+            <p class="mt-4 max-w-xl text-base leading-relaxed text-ink-muted dark:text-ink-faint" data-i18n="home.body">
               Criamos experiências de software inovadoras, com foco em qualidade, simplicidade e usabilidade.
             </p>
             <div class="mt-10">
               <a href="contact.html" class="group inline-flex items-center gap-2 rounded-lg bg-brand-gradient px-8 py-4 text-base font-semibold text-white shadow-soft transition-transform duration-300 hover:scale-[1.03] active:scale-[0.98]">
-                Fale conosco
+                <span data-i18n="home.cta">Fale conosco</span>
                 <svg class="btn-arrow h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                   <path d="M5 12h14M13 6l6 6-6 6"></path>
                 </svg>
@@ -140,13 +149,14 @@
             <img src="assets/img/logo-icon.svg" alt="" class="h-8 w-8" width="32" height="32">
             <span class="text-lg font-bold tracking-wide text-ink dark:text-white">IVALICE LABS</span>
           </div>
-          <p class="mt-2 text-[13px] text-ink-muted dark:text-ink-faint">© 2026 Ivalice Labs. Todos os direitos reservados.</p>
+          <p class="mt-2 text-[13px] text-ink-muted dark:text-ink-faint" data-i18n="footer.rights">© 2026 Ivalice Labs. Todos os direitos reservados.</p>
         </div>
         <p class="font-mono text-xs uppercase tracking-wider text-ink-muted dark:text-ink-faint">Ivalice Labs</p>
       </div>
     </footer>
   </div>
 
+  <script src="assets/js/i18n.js"></script>
   <script src="assets/js/main.js"></script>
 </body>
 </html>

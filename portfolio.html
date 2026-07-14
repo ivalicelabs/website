@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR" class="scroll-smooth">
+<html lang="pt-BR" data-lang="pt" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,6 +14,10 @@
       if (t === 'dark' || (!t && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
         document.documentElement.classList.add('dark');
       }
+      var l = localStorage.getItem('ivalice-lang');
+      if (l !== 'en' && l !== 'pt') l = 'pt';
+      document.documentElement.setAttribute('data-lang', l);
+      document.documentElement.lang = l === 'en' ? 'en' : 'pt-BR';
     })();
   </script>
   <script src="https://cdn.tailwindcss.com"></script>
@@ -38,41 +42,45 @@
   </script>
   <link rel="stylesheet" href="assets/css/styles.css">
 </head>
-<body class="min-h-screen bg-white text-ink antialiased transition-colors duration-300 dark:bg-ink-soft dark:text-white">
+<body data-page="portfolio" class="min-h-screen bg-white text-ink antialiased transition-colors duration-300 dark:bg-ink-soft dark:text-white">
   <div class="flex min-h-screen flex-col page-enter">
     <header class="sticky top-0 z-50 border-b border-surface-line bg-white/85 backdrop-blur-xl dark:border-surface-dark-line dark:bg-ink-soft/85">
       <div class="mx-auto flex max-w-site items-center justify-between gap-4 px-6 py-5 md:px-10 lg:px-20">
-        <a href="index.html" class="group flex items-center gap-3" aria-label="Ivalice Labs — início">
+        <a href="index.html" class="group flex items-center gap-3" data-i18n-aria="a11y.home">
           <span class="logo-mark block h-9 w-14 shrink-0">
             <img src="assets/img/logo-mark.svg" alt="" class="h-full w-full dark:hidden" width="57" height="36">
             <img src="assets/img/logo-mark.svg" alt="" class="hidden h-full w-full invert dark:block" width="57" height="36">
           </span>
           <span class="text-[15px] font-bold tracking-wide sm:text-lg">IVALICE LABS</span>
         </a>
-        <nav class="hidden items-center gap-8 text-[15px] lg:flex" aria-label="Principal">
-          <a href="index.html" class="font-medium text-ink-muted transition-colors hover:text-ink dark:text-ink-faint dark:hover:text-white">Início</a>
-          <a href="portfolio.html" class="font-semibold text-ink dark:text-white">Portfólio</a>
-          <a href="contact.html" class="font-medium text-ink-muted transition-colors hover:text-ink dark:text-ink-faint dark:hover:text-white">Contato</a>
-          <a href="privacy.html" class="font-medium text-ink-muted transition-colors hover:text-ink dark:text-ink-faint dark:hover:text-white">Privacidade</a>
-          <a href="terms.html" class="font-medium text-ink-muted transition-colors hover:text-ink dark:text-ink-faint dark:hover:text-white">Termos</a>
+        <nav class="hidden items-center gap-8 text-[15px] lg:flex" data-i18n-aria="a11y.nav">
+          <a href="index.html" class="font-medium text-ink-muted transition-colors hover:text-ink dark:text-ink-faint dark:hover:text-white" data-i18n="nav.home">Início</a>
+          <a href="portfolio.html" class="font-semibold text-ink dark:text-white" data-i18n="nav.portfolio">Portfólio</a>
+          <a href="contact.html" class="font-medium text-ink-muted transition-colors hover:text-ink dark:text-ink-faint dark:hover:text-white" data-i18n="nav.contact">Contato</a>
+          <a href="privacy.html" class="font-medium text-ink-muted transition-colors hover:text-ink dark:text-ink-faint dark:hover:text-white" data-i18n="nav.privacy">Privacidade</a>
+          <a href="terms.html" class="font-medium text-ink-muted transition-colors hover:text-ink dark:text-ink-faint dark:hover:text-white" data-i18n="nav.terms">Termos</a>
         </nav>
         <div class="flex items-center gap-2">
-          <button type="button" data-theme-toggle class="theme-toggle rounded-full bg-surface-light p-2 dark:bg-surface-dark" aria-label="Alternar tema claro ou escuro">
+          <div class="lang-switch" role="group" data-i18n-aria="a11y.lang">
+            <button type="button" data-lang-set="pt" aria-pressed="true">PT</button>
+            <button type="button" data-lang-set="en" aria-pressed="false">EN</button>
+          </div>
+          <button type="button" data-theme-toggle class="theme-toggle rounded-full bg-surface-light p-2 dark:bg-surface-dark" data-i18n-aria="a11y.theme">
             <svg data-theme-icon="light" class="theme-icon h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
             <svg data-theme-icon="dark" class="theme-icon hidden h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 14.5A8.5 8.5 0 1 1 9.5 3 7 7 0 0 0 21 14.5z"/></svg>
           </button>
-          <button type="button" data-mobile-toggle class="rounded-lg p-2 lg:hidden" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-nav">
+          <button type="button" data-mobile-toggle class="rounded-lg p-2 lg:hidden" data-i18n-aria="a11y.menu" aria-expanded="false" aria-controls="mobile-nav">
             <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
           </button>
         </div>
       </div>
       <div id="mobile-nav" data-mobile-nav class="mobile-nav border-t border-surface-line px-6 dark:border-surface-dark-line lg:hidden">
         <nav class="flex flex-col gap-1 py-4 text-[15px]">
-          <a href="index.html" class="rounded-lg px-3 py-2.5 font-medium text-ink-muted dark:text-ink-faint">Início</a>
-          <a href="portfolio.html" class="rounded-lg px-3 py-2.5 font-semibold">Portfólio</a>
-          <a href="contact.html" class="rounded-lg px-3 py-2.5 font-medium text-ink-muted dark:text-ink-faint">Contato</a>
-          <a href="privacy.html" class="rounded-lg px-3 py-2.5 font-medium text-ink-muted dark:text-ink-faint">Privacidade</a>
-          <a href="terms.html" class="rounded-lg px-3 py-2.5 font-medium text-ink-muted dark:text-ink-faint">Termos</a>
+          <a href="index.html" class="rounded-lg px-3 py-2.5 font-medium text-ink-muted dark:text-ink-faint" data-i18n="nav.home">Início</a>
+          <a href="portfolio.html" class="rounded-lg px-3 py-2.5 font-semibold" data-i18n="nav.portfolio">Portfólio</a>
+          <a href="contact.html" class="rounded-lg px-3 py-2.5 font-medium text-ink-muted dark:text-ink-faint" data-i18n="nav.contact">Contato</a>
+          <a href="privacy.html" class="rounded-lg px-3 py-2.5 font-medium text-ink-muted dark:text-ink-faint" data-i18n="nav.privacy">Privacidade</a>
+          <a href="terms.html" class="rounded-lg px-3 py-2.5 font-medium text-ink-muted dark:text-ink-faint" data-i18n="nav.terms">Termos</a>
         </nav>
       </div>
     </header>
@@ -84,12 +92,12 @@
             <path d="M4 8.5V18a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8.5"/><path d="M8 20v-6h8v6"/><path d="M3 8.5 12 3l9 5.5"/><path d="M12 12l3 2-3 2-3-2 3-2z"/>
           </svg>
         </div>
-        <h1 class="mt-8 text-3xl font-bold tracking-tight text-ink dark:text-white sm:text-[32px]">Portfólio em construção</h1>
-        <p class="mx-auto mt-4 max-w-md text-base leading-relaxed text-ink-muted dark:text-ink-faint">
+        <h1 class="mt-8 text-3xl font-bold tracking-tight text-ink dark:text-white sm:text-[32px]" data-i18n="portfolio.title">Portfólio em construção</h1>
+        <p class="mx-auto mt-4 max-w-md text-base leading-relaxed text-ink-muted dark:text-ink-faint" data-i18n="portfolio.body">
           Estamos preparando nossos primeiros produtos digitais. Novos projetos serão publicados em breve.
         </p>
         <a href="contact.html" class="group mt-8 inline-flex items-center gap-2 text-sm font-semibold text-brand-purple transition-colors hover:text-brand-red">
-          Quero ser avisado
+          <span data-i18n="portfolio.cta">Quero ser avisado</span>
           <svg class="btn-arrow h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </a>
       </div>
@@ -102,12 +110,13 @@
             <img src="assets/img/logo-icon.svg" alt="" class="h-8 w-8" width="32" height="32">
             <span class="text-lg font-bold tracking-wide">IVALICE LABS</span>
           </div>
-          <p class="mt-2 text-[13px] text-ink-muted dark:text-ink-faint">© 2026 Ivalice Labs. Todos os direitos reservados.</p>
+          <p class="mt-2 text-[13px] text-ink-muted dark:text-ink-faint" data-i18n="footer.rights">© 2026 Ivalice Labs. Todos os direitos reservados.</p>
         </div>
         <p class="font-mono text-xs uppercase tracking-wider text-ink-muted dark:text-ink-faint">ivalice.com.br</p>
       </div>
     </footer>
   </div>
+  <script src="assets/js/i18n.js"></script>
   <script src="assets/js/main.js"></script>
 </body>
 </html>
