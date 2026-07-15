@@ -1,0 +1,18 @@
+# Ivalice Labs
+> Empresa de aplicativos móveis e produtos digitais. Site institucional em português e inglês.
+
+Desenvolvemos ferramentas digitais com foco em qualidade, simplicidade e usabilidade. Contato: contato@ivalice.com.br
+
+## Produtos
+- [Calculadora do Trabalhador](https://clt.ivalice.com.br/): calculadoras CLT gratuitas (salário líquido, FGTS, férias, 13º, rescisão, INSS, IRRF, seguro-desemprego)
+
+## Site
+- [Início](https://ivalice.com.br/): apresentação da Ivalice Labs
+- [Portfólio](https://ivalice.com.br/portfolio/)
+- [Contato](https://ivalice.com.br/contato/)
+- [Privacidade](https://ivalice.com.br/privacidade/)
+- [Termos](https://ivalice.com.br/termos/)
+
+## Optional
+- [Sitemap](https://ivalice.com.br/sitemap.xml)
+- [ads.txt](https://ivalice.com.br/ads.txt)
