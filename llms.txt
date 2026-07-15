@@ -5,10 +5,12 @@ Desenvolvemos ferramentas digitais com foco em qualidade, simplicidade e usabili
 
 ## Produtos
 - [Calculadora do Trabalhador](https://clt.ivalice.com.br/): calculadoras CLT gratuitas (salário líquido, FGTS, férias, 13º, rescisão, INSS, IRRF, seguro-desemprego)
+- [Tabelas 2026](https://clt.ivalice.com.br/tabelas-2026/): INSS, IRRF e seguro-desemprego
+- [Guias CLT](https://clt.ivalice.com.br/guias/): artigos práticos trabalhistas
 
 ## Site
 - [Início](https://ivalice.com.br/): apresentação da Ivalice Labs
-- [Portfólio](https://ivalice.com.br/portfolio/)
+- [Portfólio](https://ivalice.com.br/portfolio/): produtos ao vivo
 - [Contato](https://ivalice.com.br/contato/)
 - [Privacidade](https://ivalice.com.br/privacidade/)
 - [Termos](https://ivalice.com.br/termos/)
@@ -16,3 +18,4 @@ Desenvolvemos ferramentas digitais com foco em qualidade, simplicidade e usabili
 ## Optional
 - [Sitemap](https://ivalice.com.br/sitemap.xml)
 - [ads.txt](https://ivalice.com.br/ads.txt)
+- [llms.txt do produto CLT](https://clt.ivalice.com.br/llms.txt)
