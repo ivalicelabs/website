@@ -7,6 +7,10 @@ Desenvolvemos ferramentas digitais com foco em qualidade, simplicidade e usabili
 - [Calculadora do Trabalhador](https://clt.ivalice.com.br/): calculadoras CLT gratuitas (salário líquido, FGTS, férias, 13º, rescisão, INSS, IRRF, seguro-desemprego)
 - [Tabelas 2026](https://clt.ivalice.com.br/tabelas-2026/): INSS, IRRF e seguro-desemprego
 - [Guias CLT](https://clt.ivalice.com.br/guias/): artigos práticos trabalhistas
+- [Financiamento Imobiliário](https://financiamento.ivalice.com.br/): SAC vs Price, quanto financiar e custo total / CET aproximado
+- [Investir](https://investir.ivalice.com.br/): juros compostos, quanto investir por mês e tempo até a meta
+- [MEI](https://mei.ivalice.com.br/): DAS, limite de faturamento e retirada estimada
+- [Churrasco](https://churrasco.ivalice.com.br/): carne, bebidas, gelo e lista de compras para a festa
 
 ## Site
 - [Início](https://ivalice.com.br/): apresentação da Ivalice Labs
@@ -19,3 +23,7 @@ Desenvolvemos ferramentas digitais com foco em qualidade, simplicidade e usabili
 - [Sitemap](https://ivalice.com.br/sitemap.xml)
 - [ads.txt](https://ivalice.com.br/ads.txt)
 - [llms.txt do produto CLT](https://clt.ivalice.com.br/llms.txt)
+- [llms.txt do financiamento](https://financiamento.ivalice.com.br/llms.txt)
+- [llms.txt do investir](https://investir.ivalice.com.br/llms.txt)
+- [llms.txt do MEI](https://mei.ivalice.com.br/llms.txt)
+- [llms.txt do churrasco](https://churrasco.ivalice.com.br/llms.txt)

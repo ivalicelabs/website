@@ -9,7 +9,7 @@
         "A Ivalice Labs cria aplicativos móveis e produtos digitais de alta qualidade, com foco em qualidade, simplicidade e usabilidade.",
       "meta.portfolio.title": "Portfólio — Ivalice Labs",
       "meta.portfolio.desc":
-        "Portfólio da Ivalice Labs — primeiros produtos digitais em breve.",
+        "Portfólio da Ivalice Labs: Calculadora do Trabalhador, Financiamento e produtos digitais.",
       "meta.contact.title": "Contato — Ivalice Labs",
       "meta.contact.desc":
         "Entre em contato com a Ivalice Labs. Vamos construir algo extraordinário juntos.",
@@ -39,9 +39,9 @@
         "Criamos experiências de software inovadoras, com foco em qualidade, simplicidade e usabilidade.",
       "home.cta": "Fale conosco",
 
-      "portfolio.title": "Portfólio em construção",
+      "portfolio.title": "Portfólio",
       "portfolio.body":
-        "Estamos preparando nossos primeiros produtos digitais. Novos projetos serão publicados em breve.",
+        "Produtos digitais da Ivalice Labs: calculadoras CLT e simuladores de financiamento imobiliário.",
       "portfolio.cta": "Quero ser avisado",
 
       "contact.eyebrow": "Fale conosco",
@@ -71,7 +71,7 @@
         "Ivalice Labs builds high-quality mobile applications and digital products with a focus on quality, simplicity, and usability.",
       "meta.portfolio.title": "Portfolio — Ivalice Labs",
       "meta.portfolio.desc":
-        "Ivalice Labs portfolio — first digital products coming soon.",
+        "Ivalice Labs portfolio: Worker Calculator, Home Financing, and digital products.",
       "meta.contact.title": "Contact — Ivalice Labs",
       "meta.contact.desc":
         "Get in touch with Ivalice Labs. Let's build something extraordinary together.",
@@ -101,9 +101,9 @@
         "We create innovative software experiences with a focus on quality, simplicity, and usability.",
       "home.cta": "Contact us",
 
-      "portfolio.title": "Portfolio under construction",
+      "portfolio.title": "Portfolio",
       "portfolio.body":
-        "We are preparing our first digital products. New projects will be published soon.",
+        "Ivalice Labs digital products: CLT calculators and home financing simulators.",
       "portfolio.cta": "Notify me",
 
       "contact.eyebrow": "Get in touch",
